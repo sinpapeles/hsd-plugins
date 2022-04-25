@@ -1,0 +1,15 @@
+{
+  "name": "@sinpapeles/hsd-plugins",
+  "description": "A collection of plugins for the HSD",
+  "version": "0.0.0",
+  "repository": "https://github.com/sinpapeles/hsd-plugins",
+  "author": "Fernando Falci <falci@falci.me>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

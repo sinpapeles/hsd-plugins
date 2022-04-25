@@ -1,0 +1,39 @@
+schema {
+  query: Query
+}
+
+type Account {
+  accountIndex: Float!
+  accountKey: String!
+  balance: Float!
+  changeAddress: String!
+  changeDepth: Float!
+  """Wallet's ID (name)"""
+  id: String!
+  name: ID!
+  receiveAddress: String!
+  receiveDepth: Float!
+  type: String!
+  """Wallet's ID (number)"""
+  wid: Float!
+}
+
+type NodeInfo {
+  network: String!
+  version: String!
+}
+
+type Query {
+  account(accountID: String!, walletID: String!): Account!
+  info: NodeInfo!
+  wallet(id: String!): Wallet!
+  wallets: [Wallet!]!
+}
+
+type Wallet {
+  accounts: [Account!]!
+  balance: Float!
+  encrypted: Boolean!
+  id: ID!
+  watchOnly: Boolean!
+}

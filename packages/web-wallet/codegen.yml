@@ -1,0 +1,21 @@
+schema: ../server/schema.graphql
+documents: './src/graphql/*.graphql'
+generates:
+  src/graphql/schema.ts:
+    plugins:
+      - typescript
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .ts
+      baseTypesPath: graphql/schema.ts
+    plugins:
+      - add:
+          content: "import { endpointUrl, fetchParams } from '../config';"
+      - typescript-operations
+      - typescript-react-query
+    config:
+      omitOperationSuffix: true
+      fetcher:
+        endpoint: 'endpointUrl'
+        fetchParams: 'fetchParams'

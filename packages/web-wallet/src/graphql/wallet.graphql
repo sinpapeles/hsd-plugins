@@ -1,0 +1,22 @@
+query Wallets {
+  wallets {
+    id
+    balance
+    watchOnly
+    encrypted
+  }
+}
+
+query Wallet($id: String!) {
+  wallet(id: $id) {
+    id
+    balance
+    watchOnly
+    encrypted
+    accounts {
+      accountIndex
+      name
+      balance
+    }
+  }
+}
